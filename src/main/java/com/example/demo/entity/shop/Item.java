@@ -1,5 +1,6 @@
 package com.example.demo.entity.shop;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,6 +23,7 @@ public class Item {
     private String name;
 
     @ManyToMany
+    @JsonIgnore
     @JoinTable (name = "item_category",
                 joinColumns = @JoinColumn(name = "item_id"),
                 inverseJoinColumns = @JoinColumn(name = "category_id"))
@@ -32,6 +34,7 @@ public class Item {
     private String description;
 
     @URL
+    @Column(name = "picture_url")
     private String pictureURL;
 
     private Double price;
