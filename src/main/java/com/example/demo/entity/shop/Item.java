@@ -3,8 +3,11 @@ package com.example.demo.entity.shop;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Getter
@@ -15,15 +18,20 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "item_category")
-    Category category;
-
+    @Size(min = 3, max = 30)
     private String name;
 
+    @ManyToMany
+    @JoinTable (name = "item_category",
+                joinColumns = @JoinColumn(name = "item_id"),
+                inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private List<Category> categories;
+
     @Lob
+    @Size(min = 10)
     private String description;
 
+    @URL
     private String pictureURL;
 
     private Double price;
