@@ -50,10 +50,31 @@
 </nav>
 
 
-<div class="alert alert-danger alert-dismissible collapse">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger collapse">
+    <button type="button" class="close" href="#" id="alertCloseBtn">&times;</button>
     <h2 class="alert-heading">Error contacting server</h2>
     <p>Please check your Internet connection and try again</p>
+</div>
+
+<!--Item modal-->
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalItemName"></h2>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card mt-4">
+                    <img class="card-img-top img-fluid" id="modalItemImageURL" src="#" alt="">
+                    <div class="card-body">
+                        <h4 id="modalItemPrice"></h4>
+                        <p class="card-text" id="modalItemDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -119,7 +140,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; There's Nemo 2018</p>
     </div>
     <!-- /.container -->
 </footer>
