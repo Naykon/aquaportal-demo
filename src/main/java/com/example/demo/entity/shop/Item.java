@@ -22,7 +22,7 @@ public class Item {
     @Size(min = 3, max = 30)
     private String name;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JsonIgnore
     @JoinTable (name = "item_category",
                 joinColumns = @JoinColumn(name = "item_id"),
@@ -38,4 +38,15 @@ public class Item {
     private String pictureURL;
 
     private Double price;
+
+    private boolean available;
+
+    public Item (String name, String description, String pictureURL, Double price, List<Category> categories) {
+        this.name = name;
+        this.description = description;
+        this.pictureURL = pictureURL;
+        this.price = price;
+        this.categories = categories;
+
+    }
 }

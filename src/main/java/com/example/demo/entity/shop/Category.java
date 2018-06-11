@@ -24,4 +24,8 @@ public class Category {
     @NotBlank
     @Size(min = 3, max = 30)
     private String name;
+
+    public Category(String name) {
+        this.name = name;
+    }
 }

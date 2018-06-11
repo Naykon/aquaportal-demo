@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
 
 <head>
 
@@ -41,10 +43,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services</a>
                 </li>
+                <!--<div sec:authorize="hasRole('ROLE_ADMIN')">-->
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <form class="logout inline" th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn btn-light">Logout</button>
+                </form>
             </ul>
+                <!--<li sec:authentication="name"></li>-->
+
+
         </div>
     </div>
 </nav>
@@ -148,7 +157,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 
 </html>
