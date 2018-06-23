@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.user.User;
-import com.example.demo.model.binding.UserBindingModel;
+import com.example.demo.model.dto.UserBindingModel;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,10 +51,10 @@ public class LoginController {
         }
 
         if (result.hasErrors()) {
-            return new ModelAndView("redirect:/index", "userRegister", userBindingModel);
+            return new ModelAndView("register", "userRegister", userBindingModel);
         }
         else {
-            return new ModelAndView("redirect:/index", "userRegister", userBindingModel);
+            return new ModelAndView("redirect:/login");
         }
     }
 

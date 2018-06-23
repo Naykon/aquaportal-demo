@@ -1,4 +1,4 @@
-package com.example.demo.model.binding;
+package com.example.demo.model.dto;
 
 import com.example.demo.validation.ValidEmail;
 import com.fasterxml.jackson.annotation.JsonIgnore;

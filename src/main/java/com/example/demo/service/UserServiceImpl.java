@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.user.User;
-import com.example.demo.model.binding.UserBindingModel;
+import com.example.demo.model.dto.UserBindingModel;
 import com.example.demo.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

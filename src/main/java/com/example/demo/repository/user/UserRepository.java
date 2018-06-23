@@ -9,5 +9,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
 
+    int countAllByUsername(String username);
+
     User findByEmailAddress(String email);
 }

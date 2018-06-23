@@ -22,4 +22,9 @@ public class ItemServiceImpl implements ItemService {
         List<Item> latestItems = itemRepository.findAllByOrderByIdDesc().stream().limit(6).collect(Collectors.toList());
         return latestItems;
     }
+
+    @Override
+    public Double getItemPrice(String name) {
+        return itemRepository.findItemByName(name).getPrice();
+    }
 }

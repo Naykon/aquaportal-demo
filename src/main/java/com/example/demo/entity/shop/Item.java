@@ -29,6 +29,10 @@ public class Item {
                 inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<Category> categories;
 
+//    @ManyToMany(mappedBy = "items")
+//    @JsonIgnore
+//    private List<Cart> orders;
+
     @Lob
     @Size(min = 10)
     private String description;

@@ -1,5 +1,6 @@
 package com.example.demo.entity.user;
 
+import com.example.demo.entity.shop.Cart;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -52,8 +53,8 @@ public class User implements UserDetails {
     @JoinColumn(name = "role_id")
     private Role role;
 
-    //Order
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Cart>  orders;
 
     public User(String firstName, String lastName, String username, String password, boolean enabled, String emailAddress, Role role) {
         this.enabled = enabled;
