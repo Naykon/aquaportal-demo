@@ -3,10 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.entity.shop.Item;
 import com.example.demo.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,12 +18,14 @@ public class ItemsController {
         this.itemService = itemService;
     }
 
-    @GetMapping(value = "/latest", produces = "application/json")
+    @GetMapping(value = "/latest")
+    @ResponseStatus(HttpStatus.OK)
     public List<Item> getLatestSix() {
         return itemService.findLatestSix();
     }
 
     @GetMapping("/price/{name}")
+    @ResponseStatus(HttpStatus.OK)
     public Double itemPrice(@PathVariable("name") String itemName) {
         return itemService.getItemPrice(itemName);
     }

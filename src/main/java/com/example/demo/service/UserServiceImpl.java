@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     public User registerNewUserAccount(UserBindingModel userBindingModel) throws IllegalArgumentException {
         if (emailExist(userBindingModel.getEmailAddress())) {
             throw new IllegalArgumentException(
-                    "There is an account with that email adress: "
+                    "There is an account with that email address: "
                             +  userBindingModel.getEmailAddress());
         }
 
