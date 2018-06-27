@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/Naykon/aquaportal-demo.svg?style=svg)](https://circleci.com/gh/Naykon/aquaportal-demo)
 
-
+  
 # aquaportal-demo
 Demo site using Spring Boot, MVC, Security, Data JPA, Data Rest, Java script and jQuery and more. 
 
