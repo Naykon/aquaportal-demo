@@ -66,12 +66,13 @@ public class DataLoader implements ApplicationRunner {
             Cart order = new Cart();
 
             Map<String, Integer> items = new HashMap<>();
-            items.put("Stamat", 1);
-            items.put("Minko", 2);
+            items.put("Nemo", 1);
+            items.put("Dori", 2);
 
             order.setStatus(OrderStatus.ACTIVE);
             order.setUser(user);
             order.setItemQty(items);
+            order.setDeliveryAddress("Nqkakyv adress");
             cartRepository.save(order);
         }
     }

@@ -226,8 +226,6 @@ function loadCartModal(cart) {
                 $("#errorAlert").show("fade");
             }
         });
-
-
     }
 
     $("#cartModal").modal("show");
